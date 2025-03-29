@@ -35,7 +35,7 @@ func ConnectDB() {
 		log.Fatalf("Error connecting to db: %v", err)
 	}
 	DB = db
-	log.Fatal("Connected to database succesfully...")
+	log.Println("Connected to database succesfully...")
 }
 
 func MigrateDatabase() {

@@ -12,6 +12,9 @@ func main() {
 	/* Connect to database */
 	db.ConnectDB()
 
+	/* Migrate the databases */
+	db.MigrateDatabase()
+
 	/* Setting up router */
 	router := gin.Default()
 
@@ -22,9 +25,6 @@ func main() {
 	routes.TableRoutes(router)
 	routes.Order(router)
 	routes.OrderItem(router)
-
-	/* Migrate the databases */
-	db.MigrateDatabase()
 
 	/* Running the server */
 	err := router.Run(db.ServerPort)
